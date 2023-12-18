@@ -28,6 +28,20 @@ steps:
     tags: 'faryalj/devops-nodejs:$(Build.BuildId)'
 
 
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerHub'
+    command: 'login'
+    
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerHub'
+    command: 'push'
+    repository: 'docker-nodejs'
+    tags: 'faryalj/devops-nodejs:$(Build.BuildId)'
+    
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
