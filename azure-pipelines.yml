@@ -26,7 +26,7 @@ steps:
     repository: 'faryalj/devops-nodejs'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: '$(Build.BuildId)'    
+    tags: '$(Build.BuildId)'
 
 - task: PublishTestResults@2
   inputs:
