@@ -25,7 +25,7 @@ steps:
     repository: 'devops-nodejs'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: 'faryalj/node:$(Build.BuildId)'
+    tags: '$(Build.BuildId)'
 
 
 - task: Docker@2
@@ -39,7 +39,7 @@ steps:
     containerRegistry: 'DockerHub'
     command: 'push'
     repository: 'devops-nodejs'
-    tags: 'faryalj/node:$(Build.BuildId)'
+    tags: '$(Build.BuildId)'
     
 
 - task: PublishTestResults@2
